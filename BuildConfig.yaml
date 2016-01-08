@@ -13,7 +13,7 @@ items:
     output:
       to:
         kind: ImageStreamTag
-        name: almita-site:latest
+        name: openshift-static-web:latest
     resources: {}
     source:
       git:
