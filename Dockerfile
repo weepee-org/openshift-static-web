@@ -7,7 +7,7 @@ RUN mkdir -p /var/www
 RUN chmod -R ugo+r /var/www
 
 # CONTENT HERE
-echo 'Hello, World!' > /var/www/index.html
+RUN echo 'Hello, World!' > /var/www/index.html
 
 ADD nginx.conf
 RUN chmod ugo+r /nginx.conf
