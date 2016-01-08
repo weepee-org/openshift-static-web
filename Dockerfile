@@ -21,3 +21,4 @@ LABEL io.openshift.min-memory 1Gi
 LABEL io.openshift.min-cpu     1
 LABEL io.k8s.description nginx static web server
 LABEL io.openshift.non-scalable     false
+LABEL io.openshift.host.generated	  true
