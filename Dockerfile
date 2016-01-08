@@ -15,3 +15,9 @@ RUN chmod ugo+r /nginx.conf
 USER 997
 EXPOSE 8080
 CMD ["/usr/sbin/nginx", "-c", "/nginx.conf", "-g", "daemon off;"]
+
+LABEL io.openshift.expose-services 8080/tcp:http
+LABEL io.openshift.min-memory 1Gi
+LABEL io.openshift.min-cpu     1
+LABEL io.k8s.description nginx static web server
+LABEL io.openshift.non-scalable     false
