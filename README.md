@@ -6,6 +6,26 @@ Template for running a nginx container for a static website.
 
 You need oc (openshift cli tool) localy installed:
 
+#### github private deploy key
+
+create an ssh deploy key without passphrase
+```sh
+ssh-keygen -f ~joeri/.ssh/openshift
+```
+
+```sh
+oc secrets new-sshauth openshift --ssh-privatekey=/home/joeri/.ssh/openshift
+oc secrets add serviceaccount/builder secrets/openshift
+```
+
+Create the BuildConfig
+
+```sh
+$ oc create -f BuildConfig.yaml
+```
+
+Deploy from private git repository
+
 ```sh
 $ oc new-app https://github.com/ure/openshift-static-web
 ```
