@@ -37,3 +37,6 @@ Routes to a static hostname
 ```sh
 $ oc create -f route.yaml
 ```
+#### WebHooks
+
+You can find the (github and generic) webhook in the BuildConfig, you can find the webhook url in the openshift control pannel ! (handy for rolling updates)
