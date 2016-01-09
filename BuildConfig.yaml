@@ -20,7 +20,7 @@ items:
         ref: master
         uri: git@github.com:ure/openshift-static-web.git
       sourceSecret:
-        name: openshift
+        name: openshift-static-web
       type: Git
     strategy:
       dockerStrategy:

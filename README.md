@@ -10,12 +10,12 @@ You need oc (openshift cli tool) localy installed:
 
 create an ssh deploy key without passphrase
 ```sh
-ssh-keygen -f ~joeri/.ssh/openshift
+ssh-keygen -f ~joeri/.ssh/openshift-static-web
 ```
 
 ```sh
-oc secrets new-sshauth openshift --ssh-privatekey=/home/joeri/.ssh/openshift
-oc secrets add serviceaccount/builder secrets/openshift
+oc secrets new-sshauth openshift-static-web --ssh-privatekey=/home/joeri/.ssh/openshift
+oc secrets add serviceaccount/builder secrets/openshift-static-web
 ```
 
 Create the BuildConfig
