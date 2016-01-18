@@ -4,7 +4,7 @@ Template for running a nginx container for a static website.
 
 ### Installation
 
-You need oc (openshift cli tool) localy installed:
+You need oc (https://github.com/openshift/origin/releases) localy installed:
 
 create a new project
 
