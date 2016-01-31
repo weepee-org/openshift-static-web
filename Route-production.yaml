@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Route
+metadata:
+  name: www.yoursite.com
+spec:
+  host: www.yoursite.com
+  to:
+    kind: Service
+    name: openshift-static-web

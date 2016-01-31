@@ -1,22 +1,23 @@
 FROM centos:7
 MAINTAINER Joeri van Dooren
 
-RUN yum -y install epel-release && yum -y install nginx && yum clean all -y
+RUN yum -y install epel-release && yum -y install httpd && yum clean all -y
 
-RUN mkdir -p /var/www
+RUN mkdir -p /var/www/html
 
 # web content
-ADD html /var/www
+ADD html /var/www/html
 
 RUN chmod -R ugo+r /var/www
 
-ADD nginx.conf /
+ADD httpd.conf /
 
-RUN chmod ugo+r /nginx.conf
+RUN chmod ugo+r /httpd.conf
 
 USER 997
 EXPOSE 8080
-CMD ["/usr/sbin/nginx", "-c", "/nginx.conf", "-g", "daemon off;"]
+
+CMD ["/usr/sbin/httpd", "-f", "/httpd.conf", "-D", "FOREGROUND"]
 
 # Set labels used in OpenShift to describe the builder images
 LABEL io.k8s.description="Platform for serving static HTML files" \
