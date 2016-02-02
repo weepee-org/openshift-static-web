@@ -23,4 +23,4 @@ CMD ["/usr/sbin/httpd", "-f", "/httpd.conf", "-D", "FOREGROUND"]
 LABEL io.k8s.description="Platform for serving static HTML files" \
       io.k8s.display-name="apache centos7 epel" \
       io.openshift.expose-services="8080:http" \
-      io.openshift.tags="builder,html,nginx"
+      io.openshift.tags="builder,html,apache"
