@@ -8,11 +8,11 @@ RUN mkdir -p /var/www/html
 # web content
 ADD html /var/www/html
 
-RUN chmod -R ugo+r /var/www
-
+# web config
 ADD httpd.conf /
 
-RUN chmod ugo+r /httpd.conf
+# directories and permissions
+RUN chmod ugo+r /httpd.conf && chmod -R ugo+r /var/www && mkdir /tmp/httpd.mutex && chmod -R ugo+r /tmp/httpd.mutex
 
 USER 997
 EXPOSE 8080
