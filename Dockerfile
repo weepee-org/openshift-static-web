@@ -12,7 +12,7 @@ ADD html /var/www/html
 ADD httpd.conf /
 
 # directories and permissions
-RUN chmod ugo+r /httpd.conf && chmod -R ugo+r /var/www && mkdir /tmp/httpd.mutex && chmod -R a+rwxt /tmp/httpd.mutex && chmod -R a+rwxt /run/httpd
+RUN rm /etc/httpd/conf.modules.d/00-proxy.conf && chmod ugo+r /httpd.conf && chmod -R ugo+r /var/www && mkdir /tmp/httpd.mutex && chmod -R a+rwxt /tmp/httpd.mutex && chmod -R a+rwxt /run/httpd
 
 USER 997
 EXPOSE 8080
