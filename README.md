@@ -1,6 +1,6 @@
-# openshift-apache-php
+# openshift-static-web
 
-Template for running a apache php on a container based on alpine linux/openshift/docker.
+Template for running a apache on a container based on alpine linux/openshift/docker.
 
 ### Installation
 
@@ -25,5 +25,5 @@ oc new-app https://github.com/ure/openshift-static-web.git -n static-webserver
 Create route for development and testing
 
 ```sh
-curl https://raw.githubusercontent.com/ure/openshift-apache-php/master/Route.yaml | oc create -f -
+curl https://raw.githubusercontent.com/ure/openshift-static-web/master/Route.yaml | oc create -f -
 ```
