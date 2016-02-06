@@ -1,8 +1,8 @@
 apiVersion: v1
 kind: Route
 metadata:
-  name: site
+  name: www
 spec:
   to:
     kind: Service
-    name: openshift-static-web
+    name: static-webserver
