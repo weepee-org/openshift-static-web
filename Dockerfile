@@ -29,10 +29,10 @@ WORKDIR /app
 ENTRYPOINT ["/scripts/run.sh"]
 
 # Set labels used in OpenShift to describe the builder images
-LABEL io.k8s.description="Alpine linux based Apache PHP Container" \
-      io.k8s.display-name="alpine apache php" \
+LABEL io.k8s.description="Alpine linux based Apache container" \
+      io.k8s.display-name="alpine apache" \
       io.openshift.expose-services="8080:http" \
-      io.openshift.tags="builder,html,apache,php" \
+      io.openshift.tags="builder,html,apache" \
       io.openshift.min-memory="1Gi" \
       io.openshift.min-cpu="1" \
       io.openshift.non-scalable="false"
