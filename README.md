@@ -17,7 +17,7 @@ oc new-project openshift-apache \
 Deploy
 
 ```sh
-oc new-app https://github.com/ure/openshift-static-web.git -n static-webserver
+oc new-app https://github.com/ure/openshift-static-web.git --name static-webserver
 ```
 
 #### Route.yml
