@@ -14,10 +14,30 @@ oc new-project openshift-apache \
     --display-name="Apache"
 ```
 
-Deploy
+Deploy (externally)
 
 ```sh
-oc new-app https://github.com/ure/openshift-static-web.git --name static-webserver
+oc new-app https://github.com/weepee-org/openshift-static-web.git --name static-webserver
+```
+
+Deploy (weepee internally)
+add to Your buildconfig
+```yaml
+spec:
+  strategy:
+    dockerStrategy:
+      from:
+        kind: ImageStreamTag
+        name: static-webserver:latest
+        namespace: weepee-registry
+    type: Docker
+```
+use in your Dockerfile
+```sh
+FROM weepee-registry/static-webserver
+
+# Your app
+ADD app /app
 ```
 
 #### Route.yml
